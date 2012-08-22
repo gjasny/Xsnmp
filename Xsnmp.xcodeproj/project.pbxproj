@@ -1,0 +1,314 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		465029CD15E5614100B82F7C /* raidDriveTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029B315E5614100B82F7C /* raidDriveTable.c */; };
+		465029D815E561E300B82F7C /* command.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029A915E5614100B82F7C /* command.c */; };
+		465029D915E561E300B82F7C /* fsTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029AC15E5614100B82F7C /* fsTable.c */; };
+		465029DA15E561E300B82F7C /* log.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029AE15E5614100B82F7C /* log.c */; };
+		465029DB15E561E300B82F7C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029B015E5614100B82F7C /* main.c */; };
+		465029DC15E561E300B82F7C /* raidInfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029B515E5614100B82F7C /* raidInfo.c */; };
+		465029DD15E561E300B82F7C /* raidSetTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029B715E5614100B82F7C /* raidSetTable.c */; };
+		465029DE15E561E300B82F7C /* raidVolumeTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029B915E5614100B82F7C /* raidVolumeTable.c */; };
+		465029DF15E561E300B82F7C /* ram.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029BB15E5614100B82F7C /* ram.c */; };
+		465029E015E561E300B82F7C /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029BD15E5614100B82F7C /* util.c */; };
+		465029E115E561E300B82F7C /* xsanAffinityTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029BF15E5614100B82F7C /* xsanAffinityTable.c */; };
+		465029E215E561E300B82F7C /* xsanNodeTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029C115E5614100B82F7C /* xsanNodeTable.c */; };
+		465029E315E561E300B82F7C /* xsanStripeGroupTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029C315E5614100B82F7C /* xsanStripeGroupTable.c */; };
+		465029E415E561E300B82F7C /* xsanVolumeTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029C515E5614100B82F7C /* xsanVolumeTable.c */; };
+		465029E515E561E300B82F7C /* xsnmpInternal.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029C715E5614100B82F7C /* xsnmpInternal.c */; };
+		465029E715E5630300B82F7C /* libnetsnmpagent.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 465029E615E5630300B82F7C /* libnetsnmpagent.dylib */; };
+		465029E915E5631300B82F7C /* libnetsnmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 465029E815E5631300B82F7C /* libnetsnmp.dylib */; };
+		465029EC15E563D200B82F7C /* libpcre.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 465029EA15E5632400B82F7C /* libpcre.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4650299415E560EA00B82F7C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4650299615E560EA00B82F7C /* xsnmp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = xsnmp; sourceTree = BUILT_PRODUCTS_DIR; };
+		465029A915E5614100B82F7C /* command.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = command.c; sourceTree = "<group>"; };
+		465029AA15E5614100B82F7C /* command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = command.h; sourceTree = "<group>"; };
+		465029AB15E5614100B82F7C /* config.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.h.in; sourceTree = "<group>"; };
+		465029AC15E5614100B82F7C /* fsTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fsTable.c; sourceTree = "<group>"; };
+		465029AD15E5614100B82F7C /* fsTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fsTable.h; sourceTree = "<group>"; };
+		465029AE15E5614100B82F7C /* log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = log.c; sourceTree = "<group>"; };
+		465029AF15E5614100B82F7C /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		465029B015E5614100B82F7C /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		465029B115E5614100B82F7C /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		465029B215E5614100B82F7C /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		465029B315E5614100B82F7C /* raidDriveTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = raidDriveTable.c; sourceTree = "<group>"; };
+		465029B415E5614100B82F7C /* raidDriveTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = raidDriveTable.h; sourceTree = "<group>"; };
+		465029B515E5614100B82F7C /* raidInfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = raidInfo.c; sourceTree = "<group>"; };
+		465029B615E5614100B82F7C /* raidInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = raidInfo.h; sourceTree = "<group>"; };
+		465029B715E5614100B82F7C /* raidSetTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = raidSetTable.c; sourceTree = "<group>"; };
+		465029B815E5614100B82F7C /* raidSetTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = raidSetTable.h; sourceTree = "<group>"; };
+		465029B915E5614100B82F7C /* raidVolumeTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = raidVolumeTable.c; sourceTree = "<group>"; };
+		465029BA15E5614100B82F7C /* raidVolumeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = raidVolumeTable.h; sourceTree = "<group>"; };
+		465029BB15E5614100B82F7C /* ram.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ram.c; sourceTree = "<group>"; };
+		465029BC15E5614100B82F7C /* ram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ram.h; sourceTree = "<group>"; };
+		465029BD15E5614100B82F7C /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		465029BE15E5614100B82F7C /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		465029BF15E5614100B82F7C /* xsanAffinityTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xsanAffinityTable.c; sourceTree = "<group>"; };
+		465029C015E5614100B82F7C /* xsanAffinityTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsanAffinityTable.h; sourceTree = "<group>"; };
+		465029C115E5614100B82F7C /* xsanNodeTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xsanNodeTable.c; sourceTree = "<group>"; };
+		465029C215E5614100B82F7C /* xsanNodeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsanNodeTable.h; sourceTree = "<group>"; };
+		465029C315E5614100B82F7C /* xsanStripeGroupTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xsanStripeGroupTable.c; sourceTree = "<group>"; };
+		465029C415E5614100B82F7C /* xsanStripeGroupTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsanStripeGroupTable.h; sourceTree = "<group>"; };
+		465029C515E5614100B82F7C /* xsanVolumeTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xsanVolumeTable.c; sourceTree = "<group>"; };
+		465029C615E5614100B82F7C /* xsanVolumeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsanVolumeTable.h; sourceTree = "<group>"; };
+		465029C715E5614100B82F7C /* xsnmpInternal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xsnmpInternal.c; sourceTree = "<group>"; };
+		465029C815E5614100B82F7C /* xsnmpInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsnmpInternal.h; sourceTree = "<group>"; };
+		465029E615E5630300B82F7C /* libnetsnmpagent.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnetsnmpagent.dylib; path = usr/lib/libnetsnmpagent.dylib; sourceTree = SDKROOT; };
+		465029E815E5631300B82F7C /* libnetsnmp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnetsnmp.dylib; path = usr/lib/libnetsnmp.dylib; sourceTree = SDKROOT; };
+		465029EA15E5632400B82F7C /* libpcre.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcre.dylib; path = usr/lib/libpcre.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4650299315E560EA00B82F7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				465029EC15E563D200B82F7C /* libpcre.dylib in Frameworks */,
+				465029E915E5631300B82F7C /* libnetsnmp.dylib in Frameworks */,
+				465029E715E5630300B82F7C /* libnetsnmpagent.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4650298B15E560EA00B82F7C = {
+			isa = PBXGroup;
+			children = (
+				465029EA15E5632400B82F7C /* libpcre.dylib */,
+				465029E815E5631300B82F7C /* libnetsnmp.dylib */,
+				465029E615E5630300B82F7C /* libnetsnmpagent.dylib */,
+				465029A815E5614100B82F7C /* src */,
+				4650299715E560EA00B82F7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4650299715E560EA00B82F7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4650299615E560EA00B82F7C /* xsnmp */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		465029A815E5614100B82F7C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				465029A915E5614100B82F7C /* command.c */,
+				465029AA15E5614100B82F7C /* command.h */,
+				465029AB15E5614100B82F7C /* config.h.in */,
+				465029AC15E5614100B82F7C /* fsTable.c */,
+				465029AD15E5614100B82F7C /* fsTable.h */,
+				465029AE15E5614100B82F7C /* log.c */,
+				465029AF15E5614100B82F7C /* log.h */,
+				465029B015E5614100B82F7C /* main.c */,
+				465029B115E5614100B82F7C /* main.h */,
+				465029B215E5614100B82F7C /* Makefile.am */,
+				465029B315E5614100B82F7C /* raidDriveTable.c */,
+				465029B415E5614100B82F7C /* raidDriveTable.h */,
+				465029B515E5614100B82F7C /* raidInfo.c */,
+				465029B615E5614100B82F7C /* raidInfo.h */,
+				465029B715E5614100B82F7C /* raidSetTable.c */,
+				465029B815E5614100B82F7C /* raidSetTable.h */,
+				465029B915E5614100B82F7C /* raidVolumeTable.c */,
+				465029BA15E5614100B82F7C /* raidVolumeTable.h */,
+				465029BB15E5614100B82F7C /* ram.c */,
+				465029BC15E5614100B82F7C /* ram.h */,
+				465029BD15E5614100B82F7C /* util.c */,
+				465029BE15E5614100B82F7C /* util.h */,
+				465029BF15E5614100B82F7C /* xsanAffinityTable.c */,
+				465029C015E5614100B82F7C /* xsanAffinityTable.h */,
+				465029C115E5614100B82F7C /* xsanNodeTable.c */,
+				465029C215E5614100B82F7C /* xsanNodeTable.h */,
+				465029C315E5614100B82F7C /* xsanStripeGroupTable.c */,
+				465029C415E5614100B82F7C /* xsanStripeGroupTable.h */,
+				465029C515E5614100B82F7C /* xsanVolumeTable.c */,
+				465029C615E5614100B82F7C /* xsanVolumeTable.h */,
+				465029C715E5614100B82F7C /* xsnmpInternal.c */,
+				465029C815E5614100B82F7C /* xsnmpInternal.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4650299515E560EA00B82F7C /* xsnmp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 465029A015E560EB00B82F7C /* Build configuration list for PBXNativeTarget "xsnmp" */;
+			buildPhases = (
+				4650299215E560EA00B82F7C /* Sources */,
+				4650299315E560EA00B82F7C /* Frameworks */,
+				4650299415E560EA00B82F7C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = xsnmp;
+			productName = Xsnmp;
+			productReference = 4650299615E560EA00B82F7C /* xsnmp */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4650298D15E560EA00B82F7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Gregor Jasny";
+			};
+			buildConfigurationList = 4650299015E560EA00B82F7C /* Build configuration list for PBXProject "Xsnmp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4650298B15E560EA00B82F7C;
+			productRefGroup = 4650299715E560EA00B82F7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4650299515E560EA00B82F7C /* xsnmp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4650299215E560EA00B82F7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				465029CD15E5614100B82F7C /* raidDriveTable.c in Sources */,
+				465029D815E561E300B82F7C /* command.c in Sources */,
+				465029D915E561E300B82F7C /* fsTable.c in Sources */,
+				465029DA15E561E300B82F7C /* log.c in Sources */,
+				465029DB15E561E300B82F7C /* main.c in Sources */,
+				465029DC15E561E300B82F7C /* raidInfo.c in Sources */,
+				465029DD15E561E300B82F7C /* raidSetTable.c in Sources */,
+				465029DE15E561E300B82F7C /* raidVolumeTable.c in Sources */,
+				465029DF15E561E300B82F7C /* ram.c in Sources */,
+				465029E015E561E300B82F7C /* util.c in Sources */,
+				465029E115E561E300B82F7C /* xsanAffinityTable.c in Sources */,
+				465029E215E561E300B82F7C /* xsanNodeTable.c in Sources */,
+				465029E315E561E300B82F7C /* xsanStripeGroupTable.c in Sources */,
+				465029E415E561E300B82F7C /* xsanVolumeTable.c in Sources */,
+				465029E515E561E300B82F7C /* xsnmpInternal.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4650299E15E560EB00B82F7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PCRE_ROOT = /opt/local;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4650299F15E560EB00B82F7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PCRE_ROOT = /opt/local;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		465029A115E560EB00B82F7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(PCRE_ROOT)/include";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		465029A215E560EB00B82F7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(PCRE_ROOT)/include";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4650299015E560EA00B82F7C /* Build configuration list for PBXProject "Xsnmp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4650299E15E560EB00B82F7C /* Debug */,
+				4650299F15E560EB00B82F7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		465029A015E560EB00B82F7C /* Build configuration list for PBXNativeTarget "xsnmp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				465029A115E560EB00B82F7C /* Debug */,
+				465029A215E560EB00B82F7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4650298D15E560EA00B82F7C /* Project object */;
+}
