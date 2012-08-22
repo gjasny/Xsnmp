@@ -25,10 +25,47 @@
 		465029E715E5630300B82F7C /* libnetsnmpagent.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 465029E615E5630300B82F7C /* libnetsnmpagent.dylib */; };
 		465029E915E5631300B82F7C /* libnetsnmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 465029E815E5631300B82F7C /* libnetsnmp.dylib */; };
 		465029EC15E563D200B82F7C /* libpcre.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 465029EA15E5632400B82F7C /* libpcre.dylib */; };
+		46502A3015E56BDD00B82F7C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46502A2F15E56BDD00B82F7C /* Cocoa.framework */; };
+		46502A3215E56BDD00B82F7C /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46502A3115E56BDD00B82F7C /* PreferencePanes.framework */; };
+		46502A4C15E56D9500B82F7C /* XsnmpPrefPanePref.m in Sources */ = {isa = PBXBuildFile; fileRef = 46502A1915E56AC900B82F7C /* XsnmpPrefPanePref.m */; };
+		46502A4D15E56D9800B82F7C /* XSSNMPConfigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46502A1C15E56AC900B82F7C /* XSSNMPConfigController.m */; };
+		46502A5015E56E0600B82F7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0815E56AC900B82F7C /* InfoPlist.strings */; };
+		46502A5115E56E1300B82F7C /* XsnmpPrefPanePref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0A15E56AC900B82F7C /* XsnmpPrefPanePref.xib */; };
+		46502A5215E56E1700B82F7C /* XsnmpPrefPanePref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 46502A1A15E56AC900B82F7C /* XsnmpPrefPanePref.tiff */; };
+		46502A5315E56E2800B82F7C /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0C15E56AC900B82F7C /* Icon.icns */; };
+		46502A6215E56E9600B82F7C /* xsnmp_helpertool.c in Sources */ = {isa = PBXBuildFile; fileRef = 46502A1215E56AC900B82F7C /* xsnmp_helpertool.c */; };
+		46502A6615E56F1600B82F7C /* XsnmpHelperTool in Resources */ = {isa = PBXBuildFile; fileRef = 46502A5815E56E5A00B82F7C /* XsnmpHelperTool */; };
+		46502A6715E56F3400B82F7C /* disable_config_management.rb in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0415E56AC900B82F7C /* disable_config_management.rb */; };
+		46502A6815E56F3400B82F7C /* disable_xsnmp_agentx.rb in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0515E56AC900B82F7C /* disable_xsnmp_agentx.rb */; };
+		46502A6915E56F3400B82F7C /* enable_config_managenent.rb in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0615E56AC900B82F7C /* enable_config_managenent.rb */; };
+		46502A6A15E56F3400B82F7C /* enable_xsnmp_agentx.rb in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0715E56AC900B82F7C /* enable_xsnmp_agentx.rb */; };
+		46502A6B15E56F3400B82F7C /* update_config.rb in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0E15E56AC900B82F7C /* update_config.rb */; };
+		46502A6C15E56F3400B82F7C /* xsnmp_helper.rb in Resources */ = {isa = PBXBuildFile; fileRef = 46502A1115E56AC900B82F7C /* xsnmp_helper.rb */; };
+		46502A7315E5731300B82F7C /* XSAuthenticatedCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 46502A1015E56AC900B82F7C /* XSAuthenticatedCommand.m */; };
+		46502A7415E5733500B82F7C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46502A6D15E56FA800B82F7C /* Security.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46502A6415E56F0600B82F7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4650298D15E560EA00B82F7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46502A5715E56E5A00B82F7C;
+			remoteInfo = XsnmpHelperTool;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4650299415E560EA00B82F7C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		46502A5615E56E5A00B82F7C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -76,6 +113,34 @@
 		465029E615E5630300B82F7C /* libnetsnmpagent.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnetsnmpagent.dylib; path = usr/lib/libnetsnmpagent.dylib; sourceTree = SDKROOT; };
 		465029E815E5631300B82F7C /* libnetsnmp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnetsnmp.dylib; path = usr/lib/libnetsnmp.dylib; sourceTree = SDKROOT; };
 		465029EA15E5632400B82F7C /* libpcre.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcre.dylib; path = usr/lib/libpcre.dylib; sourceTree = SDKROOT; };
+		46502A0415E56AC900B82F7C /* disable_config_management.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = disable_config_management.rb; sourceTree = "<group>"; };
+		46502A0515E56AC900B82F7C /* disable_xsnmp_agentx.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = disable_xsnmp_agentx.rb; sourceTree = "<group>"; };
+		46502A0615E56AC900B82F7C /* enable_config_managenent.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = enable_config_managenent.rb; sourceTree = "<group>"; };
+		46502A0715E56AC900B82F7C /* enable_xsnmp_agentx.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = enable_xsnmp_agentx.rb; sourceTree = "<group>"; };
+		46502A0915E56AC900B82F7C /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		46502A0B15E56AC900B82F7C /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/XsnmpPrefPanePref.xib; sourceTree = "<group>"; };
+		46502A0C15E56AC900B82F7C /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		46502A0D15E56AC900B82F7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46502A0E15E56AC900B82F7C /* update_config.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = update_config.rb; sourceTree = "<group>"; };
+		46502A0F15E56AC900B82F7C /* XSAuthenticatedCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSAuthenticatedCommand.h; sourceTree = "<group>"; };
+		46502A1015E56AC900B82F7C /* XSAuthenticatedCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSAuthenticatedCommand.m; sourceTree = "<group>"; };
+		46502A1115E56AC900B82F7C /* xsnmp_helper.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = xsnmp_helper.rb; sourceTree = "<group>"; };
+		46502A1215E56AC900B82F7C /* xsnmp_helpertool.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xsnmp_helpertool.c; sourceTree = "<group>"; };
+		46502A1315E56AC900B82F7C /* xsnmp_helpertool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xsnmp_helpertool.h; sourceTree = "<group>"; };
+		46502A1715E56AC900B82F7C /* XsnmpPrefPane_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XsnmpPrefPane_Prefix.pch; sourceTree = "<group>"; };
+		46502A1815E56AC900B82F7C /* XsnmpPrefPanePref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XsnmpPrefPanePref.h; sourceTree = "<group>"; };
+		46502A1915E56AC900B82F7C /* XsnmpPrefPanePref.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XsnmpPrefPanePref.m; sourceTree = "<group>"; };
+		46502A1A15E56AC900B82F7C /* XsnmpPrefPanePref.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = XsnmpPrefPanePref.tiff; sourceTree = "<group>"; };
+		46502A1B15E56AC900B82F7C /* XSSNMPConfigController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSSNMPConfigController.h; sourceTree = "<group>"; };
+		46502A1C15E56AC900B82F7C /* XSSNMPConfigController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSSNMPConfigController.m; sourceTree = "<group>"; };
+		46502A2D15E56BDD00B82F7C /* Xsnmp Preferences.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Xsnmp Preferences.prefPane"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46502A2F15E56BDD00B82F7C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		46502A3115E56BDD00B82F7C /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
+		46502A3415E56BDD00B82F7C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		46502A3515E56BDD00B82F7C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		46502A3615E56BDD00B82F7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		46502A5815E56E5A00B82F7C /* XsnmpHelperTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XsnmpHelperTool; sourceTree = BUILT_PRODUCTS_DIR; };
+		46502A6D15E56FA800B82F7C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,16 +154,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		46502A2815E56BDD00B82F7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46502A7415E5733500B82F7C /* Security.framework in Frameworks */,
+				46502A3015E56BDD00B82F7C /* Cocoa.framework in Frameworks */,
+				46502A3215E56BDD00B82F7C /* PreferencePanes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46502A5515E56E5A00B82F7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4650298B15E560EA00B82F7C = {
 			isa = PBXGroup;
 			children = (
-				465029EA15E5632400B82F7C /* libpcre.dylib */,
-				465029E815E5631300B82F7C /* libnetsnmp.dylib */,
-				465029E615E5630300B82F7C /* libnetsnmpagent.dylib */,
-				465029A815E5614100B82F7C /* src */,
+				465029F215E56AC900B82F7C /* Preferences Pane */,
+				465029A815E5614100B82F7C /* xsnmp */,
+				46502A2615E56AE800B82F7C /* Libraries and Frameworks */,
 				4650299715E560EA00B82F7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,11 +188,13 @@
 			isa = PBXGroup;
 			children = (
 				4650299615E560EA00B82F7C /* xsnmp */,
+				46502A2D15E56BDD00B82F7C /* Xsnmp Preferences.prefPane */,
+				46502A5815E56E5A00B82F7C /* XsnmpHelperTool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		465029A815E5614100B82F7C /* src */ = {
+		465029A815E5614100B82F7C /* xsnmp */ = {
 			isa = PBXGroup;
 			children = (
 				465029A915E5614100B82F7C /* command.c */,
@@ -147,10 +230,105 @@
 				465029C715E5614100B82F7C /* xsnmpInternal.c */,
 				465029C815E5614100B82F7C /* xsnmpInternal.h */,
 			);
+			name = xsnmp;
 			path = src;
 			sourceTree = "<group>";
 		};
+		465029F215E56AC900B82F7C /* Preferences Pane */ = {
+			isa = PBXGroup;
+			children = (
+				46502A4F15E56DE000B82F7C /* Resources */,
+				46502A4B15E56D5F00B82F7C /* Classes */,
+				46502A4E15E56DC000B82F7C /* Other Sources */,
+				46502A4915E56CC800B82F7C /* Helper Tool */,
+			);
+			name = "Preferences Pane";
+			path = prefpane;
+			sourceTree = "<group>";
+		};
+		46502A2615E56AE800B82F7C /* Libraries and Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46502A2F15E56BDD00B82F7C /* Cocoa.framework */,
+				46502A3115E56BDD00B82F7C /* PreferencePanes.framework */,
+				46502A3415E56BDD00B82F7C /* AppKit.framework */,
+				46502A3515E56BDD00B82F7C /* CoreData.framework */,
+				46502A3615E56BDD00B82F7C /* Foundation.framework */,
+				46502A6D15E56FA800B82F7C /* Security.framework */,
+				465029EA15E5632400B82F7C /* libpcre.dylib */,
+				465029E815E5631300B82F7C /* libnetsnmp.dylib */,
+				465029E615E5630300B82F7C /* libnetsnmpagent.dylib */,
+			);
+			name = "Libraries and Frameworks";
+			sourceTree = "<group>";
+		};
+		46502A4915E56CC800B82F7C /* Helper Tool */ = {
+			isa = PBXGroup;
+			children = (
+				46502A4A15E56CE100B82F7C /* Scripts */,
+				46502A1215E56AC900B82F7C /* xsnmp_helpertool.c */,
+				46502A1315E56AC900B82F7C /* xsnmp_helpertool.h */,
+				46502A0F15E56AC900B82F7C /* XSAuthenticatedCommand.h */,
+				46502A1015E56AC900B82F7C /* XSAuthenticatedCommand.m */,
+			);
+			name = "Helper Tool";
+			sourceTree = "<group>";
+		};
+		46502A4A15E56CE100B82F7C /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				46502A0415E56AC900B82F7C /* disable_config_management.rb */,
+				46502A0515E56AC900B82F7C /* disable_xsnmp_agentx.rb */,
+				46502A0615E56AC900B82F7C /* enable_config_managenent.rb */,
+				46502A0715E56AC900B82F7C /* enable_xsnmp_agentx.rb */,
+				46502A0E15E56AC900B82F7C /* update_config.rb */,
+				46502A1115E56AC900B82F7C /* xsnmp_helper.rb */,
+			);
+			name = Scripts;
+			sourceTree = "<group>";
+		};
+		46502A4B15E56D5F00B82F7C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				46502A1815E56AC900B82F7C /* XsnmpPrefPanePref.h */,
+				46502A1915E56AC900B82F7C /* XsnmpPrefPanePref.m */,
+				46502A1B15E56AC900B82F7C /* XSSNMPConfigController.h */,
+				46502A1C15E56AC900B82F7C /* XSSNMPConfigController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		46502A4E15E56DC000B82F7C /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				46502A1715E56AC900B82F7C /* XsnmpPrefPane_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		46502A4F15E56DE000B82F7C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46502A0815E56AC900B82F7C /* InfoPlist.strings */,
+				46502A0A15E56AC900B82F7C /* XsnmpPrefPanePref.xib */,
+				46502A1A15E56AC900B82F7C /* XsnmpPrefPanePref.tiff */,
+				46502A0C15E56AC900B82F7C /* Icon.icns */,
+				46502A0D15E56AC900B82F7C /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		46502A2915E56BDD00B82F7C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		4650299515E560EA00B82F7C /* xsnmp */ = {
@@ -170,6 +348,43 @@
 			productReference = 4650299615E560EA00B82F7C /* xsnmp */;
 			productType = "com.apple.product-type.tool";
 		};
+		46502A2C15E56BDD00B82F7C /* Xsnmp Preferences */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46502A4615E56BDD00B82F7C /* Build configuration list for PBXNativeTarget "Xsnmp Preferences" */;
+			buildPhases = (
+				46502A2715E56BDD00B82F7C /* Sources */,
+				46502A2815E56BDD00B82F7C /* Frameworks */,
+				46502A2915E56BDD00B82F7C /* Headers */,
+				46502A2A15E56BDD00B82F7C /* Resources */,
+				46502A2B15E56BDD00B82F7C /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46502A6515E56F0600B82F7C /* PBXTargetDependency */,
+			);
+			name = "Xsnmp Preferences";
+			productName = "Xsnmp Preferences";
+			productReference = 46502A2D15E56BDD00B82F7C /* Xsnmp Preferences.prefPane */;
+			productType = "com.apple.product-type.bundle";
+		};
+		46502A5715E56E5A00B82F7C /* XsnmpHelperTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46502A5F15E56E5A00B82F7C /* Build configuration list for PBXNativeTarget "XsnmpHelperTool" */;
+			buildPhases = (
+				46502A5415E56E5A00B82F7C /* Sources */,
+				46502A5515E56E5A00B82F7C /* Frameworks */,
+				46502A5615E56E5A00B82F7C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XsnmpHelperTool;
+			productName = XsnmpHelperTool;
+			productReference = 46502A5815E56E5A00B82F7C /* XsnmpHelperTool */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -185,6 +400,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 4650298B15E560EA00B82F7C;
 			productRefGroup = 4650299715E560EA00B82F7C /* Products */;
@@ -192,9 +408,42 @@
 			projectRoot = "";
 			targets = (
 				4650299515E560EA00B82F7C /* xsnmp */,
+				46502A2C15E56BDD00B82F7C /* Xsnmp Preferences */,
+				46502A5715E56E5A00B82F7C /* XsnmpHelperTool */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46502A2A15E56BDD00B82F7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46502A6715E56F3400B82F7C /* disable_config_management.rb in Resources */,
+				46502A6815E56F3400B82F7C /* disable_xsnmp_agentx.rb in Resources */,
+				46502A6915E56F3400B82F7C /* enable_config_managenent.rb in Resources */,
+				46502A6A15E56F3400B82F7C /* enable_xsnmp_agentx.rb in Resources */,
+				46502A6B15E56F3400B82F7C /* update_config.rb in Resources */,
+				46502A6C15E56F3400B82F7C /* xsnmp_helper.rb in Resources */,
+				46502A6615E56F1600B82F7C /* XsnmpHelperTool in Resources */,
+				46502A5015E56E0600B82F7C /* InfoPlist.strings in Resources */,
+				46502A5115E56E1300B82F7C /* XsnmpPrefPanePref.xib in Resources */,
+				46502A5215E56E1700B82F7C /* XsnmpPrefPanePref.tiff in Resources */,
+				46502A5315E56E2800B82F7C /* Icon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		46502A2B15E56BDD00B82F7C /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4650299215E560EA00B82F7C /* Sources */ = {
@@ -219,7 +468,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		46502A2715E56BDD00B82F7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46502A4C15E56D9500B82F7C /* XsnmpPrefPanePref.m in Sources */,
+				46502A4D15E56D9800B82F7C /* XSSNMPConfigController.m in Sources */,
+				46502A7315E5731300B82F7C /* XSAuthenticatedCommand.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46502A5415E56E5A00B82F7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46502A6215E56E9600B82F7C /* xsnmp_helpertool.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46502A6515E56F0600B82F7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46502A5715E56E5A00B82F7C /* XsnmpHelperTool */;
+			targetProxy = 46502A6415E56F0600B82F7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		46502A0815E56AC900B82F7C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46502A0915E56AC900B82F7C /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		46502A0A15E56AC900B82F7C /* XsnmpPrefPanePref.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46502A0B15E56AC900B82F7C /* English */,
+			);
+			name = XsnmpPrefPanePref.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4650299E15E560EB00B82F7C /* Debug */ = {
@@ -277,6 +571,46 @@
 			};
 			name = Release;
 		};
+		46502A4715E56BDD00B82F7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = prefpane/XsnmpPrefPane_Prefix.pch;
+				INFOPLIST_FILE = prefpane/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Debug;
+		};
+		46502A4815E56BDD00B82F7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = prefpane/XsnmpPrefPane_Prefix.pch;
+				INFOPLIST_FILE = prefpane/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Release;
+		};
+		46502A6015E56E5A00B82F7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		46502A6115E56E5A00B82F7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -297,6 +631,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		46502A4615E56BDD00B82F7C /* Build configuration list for PBXNativeTarget "Xsnmp Preferences" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46502A4715E56BDD00B82F7C /* Debug */,
+				46502A4815E56BDD00B82F7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		46502A5F15E56E5A00B82F7C /* Build configuration list for PBXNativeTarget "XsnmpHelperTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46502A6015E56E5A00B82F7C /* Debug */,
+				46502A6115E56E5A00B82F7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
