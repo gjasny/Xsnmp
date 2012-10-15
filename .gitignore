@@ -29,3 +29,5 @@ libtool
 stamp-h1
 .*.swp
 xsnmp
+*.xcuserstate
+*.xcodeproj/xcuserdata/*
