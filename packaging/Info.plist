@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>Xsnmp.icns</string>
 	<key>CFBundleIdentifier</key>
-    <string>com.xsnmp.xsnmp_agentx</string>
+    <string>com.xsnmp.agentx</string>
 	<key>CFBundleInfoDictonaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
