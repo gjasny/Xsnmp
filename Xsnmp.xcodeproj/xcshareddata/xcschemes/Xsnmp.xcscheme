@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4650299515E560EA00B82F7C"
-               BuildableName = "xsnmp"
-               BlueprintName = "xsnmp"
+               BlueprintIdentifier = "46502A2C15E56BDD00B82F7C"
+               BuildableName = "Xsnmp Preferences.prefPane"
+               BlueprintName = "Xsnmp Preferences"
                ReferencedContainer = "container:Xsnmp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "46502A2C15E56BDD00B82F7C"
-               BuildableName = "Xsnmp Preferences.prefPane"
-               BlueprintName = "Xsnmp Preferences"
+               BlueprintIdentifier = "CE86E637162C7C150060B6E4"
+               BuildableName = "XsnmpAgentExtension.app"
+               BlueprintName = "XsnmpAgentExtension"
                ReferencedContainer = "container:Xsnmp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,15 +43,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4650299515E560EA00B82F7C"
-            BuildableName = "xsnmp"
-            BlueprintName = "xsnmp"
-            ReferencedContainer = "container:Xsnmp.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -62,15 +53,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4650299515E560EA00B82F7C"
-            BuildableName = "xsnmp"
-            BlueprintName = "xsnmp"
-            ReferencedContainer = "container:Xsnmp.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,15 +62,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4650299515E560EA00B82F7C"
-            BuildableName = "xsnmp"
-            BlueprintName = "xsnmp"
-            ReferencedContainer = "container:Xsnmp.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
