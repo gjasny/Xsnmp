@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<installer-gui-script minSpecVersion="1">
+<installer-gui-script minSpecVersion="2">
     <pkg-ref id="com.xsnmp.pkg"/>
-    <options customize="never" require-scripts="false"/>
+    <options customize="never" require-scripts="false" hostArchitectures="x86_64"/>
+    <domain enable_anywhere="false" enable_currentUserHome="false" enable_localSystem="true"/>
+    <volume-check>
+        <allowed-os-versions>
+            <os-version min="10.8"/>
+        </allowed-os-versions>
+    </volume-check>
     <choices-outline>
         <line choice="default">
             <line choice="com.xsnmp.pkg"/>
