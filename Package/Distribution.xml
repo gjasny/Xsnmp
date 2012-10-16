@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<installer-gui-script minSpecVersion="1">
+    <pkg-ref id="com.xsnmp.pkg"/>
+    <options customize="never" require-scripts="false"/>
+    <choices-outline>
+        <line choice="default">
+            <line choice="com.xsnmp.pkg"/>
+        </line>
+    </choices-outline>
+    <choice id="default"/>
+    <choice id="com.xsnmp.pkg" visible="false">
+        <pkg-ref id="com.xsnmp.pkg"/>
+    </choice>
+    <pkg-ref id="com.xsnmp.pkg" version="0" onConclusion="none">XsnmpPackage.pkg</pkg-ref>
+</installer-gui-script>

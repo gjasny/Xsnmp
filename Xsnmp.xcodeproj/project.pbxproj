@@ -25,6 +25,7 @@
 		46502A6C15E56F3400B82F7C /* xsnmp_helper.rb in Resources */ = {isa = PBXBuildFile; fileRef = 46502A1115E56AC900B82F7C /* xsnmp_helper.rb */; };
 		46502A7315E5731300B82F7C /* XSAuthenticatedCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 46502A1015E56AC900B82F7C /* XSAuthenticatedCommand.m */; };
 		46502A7415E5733500B82F7C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46502A6D15E56FA800B82F7C /* Security.framework */; };
+		CE4C0356162C971D00D47018 /* com.xsnmp.xsnmp-agentx.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE4C0355162C971200D47018 /* com.xsnmp.xsnmp-agentx.plist */; };
 		CE86E655162C7C710060B6E4 /* command.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029A915E5614100B82F7C /* command.c */; };
 		CE86E656162C7C750060B6E4 /* fsTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029AC15E5614100B82F7C /* fsTable.c */; };
 		CE86E657162C7C780060B6E4 /* log.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029AE15E5614100B82F7C /* log.c */; };
@@ -42,7 +43,6 @@
 		CE86E663162C7C9D0060B6E4 /* xsnmpInternal.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029C715E5614100B82F7C /* xsnmpInternal.c */; };
 		CE86E665162C7D3C0060B6E4 /* libnetsnmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 465029E815E5631300B82F7C /* libnetsnmp.dylib */; };
 		CE86E666162C7D3C0060B6E4 /* libnetsnmpagent.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 465029E615E5630300B82F7C /* libnetsnmpagent.dylib */; };
-		CE86E667162C7D4B0060B6E4 /* Xsnmp Preferences.prefPane in Resources */ = {isa = PBXBuildFile; fileRef = 46502A2D15E56BDD00B82F7C /* Xsnmp Preferences.prefPane */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,19 +53,14 @@
 			remoteGlobalIDString = 46502A5715E56E5A00B82F7C;
 			remoteInfo = XsnmpHelperTool;
 		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		46502A5615E56E5A00B82F7C /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
+		CE4C034E162C8E5F00D47018 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4650298D15E560EA00B82F7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46502A2C15E56BDD00B82F7C;
+			remoteInfo = "Xsnmp Preferences";
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		465029A915E5614100B82F7C /* command.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = command.c; sourceTree = "<group>"; };
@@ -127,6 +122,7 @@
 		46502A3115E56BDD00B82F7C /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
 		46502A5815E56E5A00B82F7C /* XsnmpHelperTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XsnmpHelperTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		46502A6D15E56FA800B82F7C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CE4C0355162C971200D47018 /* com.xsnmp.xsnmp-agentx.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "com.xsnmp.xsnmp-agentx.plist"; sourceTree = "<group>"; };
 		CE86E638162C7C150060B6E4 /* XsnmpAgentExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XsnmpAgentExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -183,6 +179,7 @@
 		465029A815E5614100B82F7C /* XsnmpAgentExtension */ = {
 			isa = PBXGroup;
 			children = (
+				CE4C0354162C971200D47018 /* launchd */,
 				465029A915E5614100B82F7C /* command.c */,
 				465029AA15E5614100B82F7C /* command.h */,
 				465029AB15E5614100B82F7C /* config.h.in */,
@@ -300,6 +297,14 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		CE4C0354162C971200D47018 /* launchd */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C0355162C971200D47018 /* com.xsnmp.xsnmp-agentx.plist */,
+			);
+			path = launchd;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -313,9 +318,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		46502A2C15E56BDD00B82F7C /* Xsnmp Preferences */ = {
+		46502A2C15E56BDD00B82F7C /* XsnmpPreferences */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46502A4615E56BDD00B82F7C /* Build configuration list for PBXNativeTarget "Xsnmp Preferences" */;
+			buildConfigurationList = 46502A4615E56BDD00B82F7C /* Build configuration list for PBXNativeTarget "XsnmpPreferences" */;
 			buildPhases = (
 				46502A2715E56BDD00B82F7C /* Sources */,
 				46502A2815E56BDD00B82F7C /* Frameworks */,
@@ -328,7 +333,7 @@
 			dependencies = (
 				46502A6515E56F0600B82F7C /* PBXTargetDependency */,
 			);
-			name = "Xsnmp Preferences";
+			name = XsnmpPreferences;
 			productName = "Xsnmp Preferences";
 			productReference = 46502A2D15E56BDD00B82F7C /* Xsnmp Preferences.prefPane */;
 			productType = "com.apple.product-type.bundle";
@@ -339,7 +344,6 @@
 			buildPhases = (
 				46502A5415E56E5A00B82F7C /* Sources */,
 				46502A5515E56E5A00B82F7C /* Frameworks */,
-				46502A5615E56E5A00B82F7C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -357,10 +361,12 @@
 				CE86E634162C7C150060B6E4 /* Sources */,
 				CE86E635162C7C150060B6E4 /* Frameworks */,
 				CE86E636162C7C150060B6E4 /* Resources */,
+				CE4C0350162C8E6700D47018 /* Build Package */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CE4C034F162C8E5F00D47018 /* PBXTargetDependency */,
 			);
 			name = XsnmpAgentExtension;
 			productName = XsnmpAgentExtension;
@@ -389,8 +395,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				46502A2C15E56BDD00B82F7C /* Xsnmp Preferences */,
 				46502A5715E56E5A00B82F7C /* XsnmpHelperTool */,
+				46502A2C15E56BDD00B82F7C /* XsnmpPreferences */,
 				CE86E637162C7C150060B6E4 /* XsnmpAgentExtension */,
 			);
 		};
@@ -419,7 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE86E667162C7D4B0060B6E4 /* Xsnmp Preferences.prefPane in Resources */,
+				CE4C0356162C971D00D47018 /* com.xsnmp.xsnmp-agentx.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +440,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE4C0350162C8E6700D47018 /* Build Package */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Package";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/Xsnmp.pkg",
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "pkgbuild --root \"${INSTALL_ROOT}\" \\\n    --identifier \"com.xsnmp.pkg\" \\\n    --version \"${CURRENT_PROJECT_VERSION}\" \\\n    --install-location \"/\" \\\n    --scripts \"Package/scripts\" \\\n    \"${BUILT_PRODUCTS_DIR}/XsnmpPackage.pkg\"\n\nproductbuild --distribution \"Package/Distribution.xml\"  \\\n    --package-path \"${BUILT_PRODUCTS_DIR}\" \\\n    \"${BUILT_PRODUCTS_DIR}/Xsnmp.pkg\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46502A2715E56BDD00B82F7C /* Sources */ = {
@@ -484,6 +508,11 @@
 			target = 46502A5715E56E5A00B82F7C /* XsnmpHelperTool */;
 			targetProxy = 46502A6415E56F0600B82F7C /* PBXContainerItemProxy */;
 		};
+		CE4C034F162C8E5F00D47018 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46502A2C15E56BDD00B82F7C /* XsnmpPreferences */;
+			targetProxy = CE4C034E162C8E5F00D47018 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -513,6 +542,7 @@
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -535,6 +565,7 @@
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -552,7 +583,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefpane/XsnmpPrefPane_Prefix.pch;
 				INFOPLIST_FILE = prefpane/Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				INSTALL_PATH = /Library/PreferencePanes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = prefPane;
 			};
@@ -565,7 +596,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefpane/XsnmpPrefPane_Prefix.pch;
 				INFOPLIST_FILE = prefpane/Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				INSTALL_PATH = /Library/PreferencePanes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = prefPane;
 			};
@@ -575,6 +606,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -582,6 +614,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -591,6 +624,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = "$(PCRE_ROOT)/include";
 				INFOPLIST_FILE = packaging/Info.plist;
+				INSTALL_PATH = /Library/Xsnmp;
 				OTHER_LDFLAGS = "$(PCRE_ROOT)/lib/libpcre.a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -603,6 +637,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = "$(PCRE_ROOT)/include";
 				INFOPLIST_FILE = packaging/Info.plist;
+				INSTALL_PATH = /Library/Xsnmp;
 				OTHER_LDFLAGS = "$(PCRE_ROOT)/lib/libpcre.a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -621,7 +656,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46502A4615E56BDD00B82F7C /* Build configuration list for PBXNativeTarget "Xsnmp Preferences" */ = {
+		46502A4615E56BDD00B82F7C /* Build configuration list for PBXNativeTarget "XsnmpPreferences" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46502A4715E56BDD00B82F7C /* Debug */,
