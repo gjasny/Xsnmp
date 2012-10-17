@@ -117,7 +117,7 @@
 		46502A1A15E56AC900B82F7C /* XsnmpPrefPanePref.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = XsnmpPrefPanePref.tiff; sourceTree = "<group>"; };
 		46502A1B15E56AC900B82F7C /* XSSNMPConfigController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSSNMPConfigController.h; sourceTree = "<group>"; };
 		46502A1C15E56AC900B82F7C /* XSSNMPConfigController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSSNMPConfigController.m; sourceTree = "<group>"; };
-		46502A2D15E56BDD00B82F7C /* Xsnmp Preferences.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Xsnmp Preferences.prefPane"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46502A2D15E56BDD00B82F7C /* Xsnmp Preferences.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Xsnmp Preferences.prefPane"; path = XsnmpPreferences.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		46502A2F15E56BDD00B82F7C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		46502A3115E56BDD00B82F7C /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
 		46502A5815E56E5A00B82F7C /* XsnmpHelperTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XsnmpHelperTool; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -451,7 +451,7 @@
 			);
 			name = "Build Package";
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/Xsnmp.pkg",
+				"$(BUILT_PRODUCTS_DIR)/Xsnmp-$(CURRENT_PROJECT_VERSION).pkg",
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
@@ -544,7 +544,6 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1.0.3;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
