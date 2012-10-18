@@ -2,6 +2,7 @@
 *.dSYM
 .deps
 .libs
+.dirstamp
 build
 *.xcodeproj/*pbxuser
 *.xcodeproj/*mode1v3
@@ -21,6 +22,7 @@ ltmain.sh
 missing
 depcomp
 libtool
+*~
 *.a
 *.o
 *.so
