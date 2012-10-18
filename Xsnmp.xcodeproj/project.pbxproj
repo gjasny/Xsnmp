@@ -16,7 +16,6 @@
 		46502A5215E56E1700B82F7C /* XsnmpPrefPanePref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 46502A1A15E56AC900B82F7C /* XsnmpPrefPanePref.tiff */; };
 		46502A5315E56E2800B82F7C /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0C15E56AC900B82F7C /* Icon.icns */; };
 		46502A6215E56E9600B82F7C /* xsnmp_helpertool.c in Sources */ = {isa = PBXBuildFile; fileRef = 46502A1215E56AC900B82F7C /* xsnmp_helpertool.c */; };
-		46502A6615E56F1600B82F7C /* XsnmpHelperTool in Resources */ = {isa = PBXBuildFile; fileRef = 46502A5815E56E5A00B82F7C /* XsnmpHelperTool */; };
 		46502A6715E56F3400B82F7C /* disable_config_management.rb in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0415E56AC900B82F7C /* disable_config_management.rb */; };
 		46502A6815E56F3400B82F7C /* disable_xsnmp_agentx.rb in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0515E56AC900B82F7C /* disable_xsnmp_agentx.rb */; };
 		46502A6915E56F3400B82F7C /* enable_config_managenent.rb in Resources */ = {isa = PBXBuildFile; fileRef = 46502A0615E56AC900B82F7C /* enable_config_managenent.rb */; };
@@ -25,6 +24,7 @@
 		46502A6C15E56F3400B82F7C /* xsnmp_helper.rb in Resources */ = {isa = PBXBuildFile; fileRef = 46502A1115E56AC900B82F7C /* xsnmp_helper.rb */; };
 		46502A7315E5731300B82F7C /* XSAuthenticatedCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 46502A1015E56AC900B82F7C /* XSAuthenticatedCommand.m */; };
 		46502A7415E5733500B82F7C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46502A6D15E56FA800B82F7C /* Security.framework */; };
+		CE39738016302E4600B059AF /* XsnmpHelperTool in Copy Helper Tool */ = {isa = PBXBuildFile; fileRef = 46502A5815E56E5A00B82F7C /* XsnmpHelperTool */; };
 		CE4C0356162C971D00D47018 /* com.xsnmp.xsnmp-agentx.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE4C0355162C971200D47018 /* com.xsnmp.xsnmp-agentx.plist */; };
 		CE86E655162C7C710060B6E4 /* command.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029A915E5614100B82F7C /* command.c */; };
 		CE86E656162C7C750060B6E4 /* fsTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 465029AC15E5614100B82F7C /* fsTable.c */; };
@@ -61,6 +61,20 @@
 			remoteInfo = "Xsnmp Preferences";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE39737E16302E3500B059AF /* Copy Helper Tool */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				CE39738016302E4600B059AF /* XsnmpHelperTool in Copy Helper Tool */,
+			);
+			name = "Copy Helper Tool";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		465029A915E5614100B82F7C /* command.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = command.c; sourceTree = "<group>"; };
@@ -326,6 +340,7 @@
 				46502A2815E56BDD00B82F7C /* Frameworks */,
 				46502A2915E56BDD00B82F7C /* Headers */,
 				46502A2A15E56BDD00B82F7C /* Resources */,
+				CE39737E16302E3500B059AF /* Copy Helper Tool */,
 				46502A2B15E56BDD00B82F7C /* Rez */,
 			);
 			buildRules = (
@@ -413,7 +428,6 @@
 				46502A6A15E56F3400B82F7C /* enable_xsnmp_agentx.rb in Resources */,
 				46502A6B15E56F3400B82F7C /* update_config.rb in Resources */,
 				46502A6C15E56F3400B82F7C /* xsnmp_helper.rb in Resources */,
-				46502A6615E56F1600B82F7C /* XsnmpHelperTool in Resources */,
 				46502A5015E56E0600B82F7C /* InfoPlist.strings in Resources */,
 				46502A5115E56E1300B82F7C /* XsnmpPrefPanePref.xib in Resources */,
 				46502A5215E56E1700B82F7C /* XsnmpPrefPanePref.tiff in Resources */,
