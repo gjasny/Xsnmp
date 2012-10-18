@@ -60,7 +60,7 @@
 		{
 		}
 		args[[arguments count]+2] = NULL;
-		NSLog(@"Argv%i = NULL", [arguments count]+2, args[1]);
+		NSLog(@"Argv%lu = NULL", (unsigned long)[arguments count]+2);
 						
 		char *helperPath = (char *) [[[XsnmpPrefPanePref bundle] pathForAuxiliaryExecutable:@"XsnmpHelperTool"] cStringUsingEncoding:NSUTF8StringEncoding];
 		NSLog (@"Helper path is %s (%@)", helperPath, [[XsnmpPrefPanePref bundle] bundlePath]);
