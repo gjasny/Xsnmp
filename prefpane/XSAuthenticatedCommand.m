@@ -89,6 +89,8 @@
 
 - (void) dealloc
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+
 	if (authRef)
 	{ AuthorizationFree(authRef,kAuthorizationFlagDefaults); }
 	[readHandle release];
