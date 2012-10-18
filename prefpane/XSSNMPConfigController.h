@@ -19,6 +19,5 @@
 @property (nonatomic, copy) NSNumber *manageConfig;
 @property (nonatomic, copy) NSNumber *agentExtensionEnabled;
 @property (nonatomic, copy) NSString *snmpCommunity;
-- (IBAction) buildCustomInstallerClicked:(id)sender;
 
 @end
