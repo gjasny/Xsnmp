@@ -227,12 +227,12 @@ main (int argc, char **argv)
   init_xsanAffinityTable();
 
   /* Ram (Mac Only) */
-#ifdef HOST_MACOSX
+#ifdef __APPLE__
   init_ram();
 #endif
 
   /* Raidutil (Mac Only) */
-#ifdef HOST_MACOSX
+#ifdef __APPLE__
   init_raidInfo();
   init_raidSetTable();
   init_raidDriveTable();
