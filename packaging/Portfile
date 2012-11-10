@@ -1,0 +1,31 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+
+name                xsnmp
+version             1.2.0
+revision            1
+categories          net
+license             Apache-2
+platforms           darwin
+maintainers         googlemail.com:gjasny openmaintainer
+description         SNMP agent extension to query Mac OS and Apple values
+
+fetch.type          git
+git.url             git://github.com/gjasny/Xsnmp.git
+
+depends_lib         port:pcre \
+                    lib:libnetsnmp:net-snmp \
+                    lib:libnetsnmpagent:net-snmp
+
+use_autoreconf  yes
+autoreconf.args -fvi
+
+startupitem.create  yes
+startupitem.executable  ${prefix}/sbin/xsnmp -f
+
+post-destroot {
+    xinstall -d -m 755 ${destroot}${prefix}/share/snmp/mibs
+    xinstall -W ${worksrcpath} -m 644 mib/XSNMP-MIB.txt ${destroot}${prefix}/share/snmp/mibs/
+}
