@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.0-beta1</string>
+	<string>1.2.0-beta2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>300703</string>
+	<string>300705</string>
 	<key>NSMainNibFile</key>
 	<string>XsnmpPrefPanePref</string>
 	<key>NSPrefPaneIconFile</key>
