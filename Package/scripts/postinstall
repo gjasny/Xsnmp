@@ -1,13 +1,5 @@
 #!/bin/sh
 
-# Link launch daemon into place
-if test -e /Library/LaunchDaemons/com.xsnmp.xsnmp-agentx.plist; then
-  echo "Leaving existing com.xsnmp.xsnmp-agentx.plist launchdaemon in place"
-else
-  echo "Symlinking com.xsnmp.xsnmp-agentx.plist"
-  ln -sf /Library/Xsnmp/XsnmpAgentExtension.app/Contents/Resources/com.xsnmp.xsnmp-agentx.plist /Library/LaunchDaemons/com.xsnmp.xsnmp-agentx.plist
-fi
-
 # Check to see if there's a default set for Xsnmp Agent Enabled 
 defaults read /Library/Preferences/com.xsnmp.xsnmp agentExtensionEnabled
 if test $? -eq "1"; then 
@@ -25,6 +17,6 @@ if test $? -eq "1"; then
 fi
 
 # Restart Xsnmp Agent Extension
-killall XsnmpAgentExtension
+killall xsnmpd
 
 exit 0

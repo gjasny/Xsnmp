@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CE86E637162C7C150060B6E4"
-               BuildableName = "XsnmpAgentExtension.app"
-               BlueprintName = "XsnmpAgentExtension"
+               BlueprintIdentifier = "46726032164E88D000472104"
+               BuildableName = "xsnmpd"
+               BlueprintName = "xsnmpd"
                ReferencedContainer = "container:Xsnmp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,6 +43,15 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "46726032164E88D000472104"
+            BuildableName = "xsnmpd"
+            BlueprintName = "xsnmpd"
+            ReferencedContainer = "container:Xsnmp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -53,6 +62,21 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "46726032164E88D000472104"
+            BuildableName = "xsnmpd"
+            BlueprintName = "xsnmpd"
+            ReferencedContainer = "container:Xsnmp.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-f"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -79,9 +103,9 @@
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "CE86E637162C7C150060B6E4"
-                     BuildableName = "XsnmpAgentExtension.app"
-                     BlueprintName = "XsnmpAgentExtension"
+                     BlueprintIdentifier = "46726032164E88D000472104"
+                     BuildableName = "xsnmpd"
+                     BlueprintName = "xsnmpd"
                      ReferencedContainer = "container:Xsnmp.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
