@@ -90,6 +90,11 @@ main (int argc, char **argv)
   char* cp = NULL;
   int dont_fork = 0, do_help = 0;
 
+  if (strcmp(PACKAGE_VERSION, netsnmp_get_version()) != 0) {
+    fprintf(stderr, "Header and library version mismatch " PACKAGE_VERSION " != %s\n", netsnmp_get_version());
+    exit(EXIT_FAILURE);
+  }
+
   while ((arg = getopt(argc, argv, "dD:fhHL:Xp"
 #ifndef DISABLE_MIB_LOADING
                        "m:M:"
