@@ -1,3 +1,7 @@
+#ifdef PACKAGE_VERSION
+#undef PACKAGE_VERSION
+#endif
+
 /* generated from net-snmp-config */
 #include <net-snmp/net-snmp-config.h>
 #ifdef HAVE_SIGNAL
