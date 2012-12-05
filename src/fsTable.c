@@ -74,6 +74,9 @@ struct fsTable_entry {
     u_long fsUsed;
     u_long fsAvail;
     u_long fsUtilization;
+    u_long fsInodesUsed;
+    u_long fsInodesFree;
+    u_long fsInodesUtilization;
     long fsWriteable;
     long fsRemovable;
     long fsBootable;
@@ -89,7 +92,7 @@ struct fsTable_entry {
     struct fsTable_entry *next;
 };
 
-struct fsTable_entry  *fsTable_head;
+static struct fsTable_entry  *fsTable_head;
 
 /* create a new row in the (unsorted) table */
 struct fsTable_entry *
@@ -229,14 +232,23 @@ void update_volumes()
   struct timeval now;
   gettimeofday(&now, NULL);
   
-  char *data = x_command_run("df -m", 0);
+  char *data = x_command_run("df -mi", 0);
   if (!data) return;
   size_t data_len = strlen(data);
 
   const char *error;
   int erroffset;
   int ovector[OVECCOUNT];
-  pcre *re = pcre_compile("^(.*)[ ]+(\\d+)[ ]+(\\d+)[ ]+(\\d+)[ ]+(\\d+)%[ ]+(.*)$", PCRE_MULTILINE, &error, &erroffset, NULL);
+  pcre *re = pcre_compile("^(.*)[ ]+"   /*  2  3 Filesystem */
+                          "(\\d+)[ ]+"  /*  4  5 1M-blocks */
+                          "(\\d+)[ ]+"  /*  6  7 Used */
+                          "(\\d+)[ ]+"  /*  8  9 Available */
+                          "(\\d+)%[ ]+" /* 10 11 Capacity */
+                          "(\\d+)[ ]+"  /* 12 13 iused */
+                          "(\\d+)[ ]+"  /* 14 15 ifree */
+                          "(\\d+)%[ ]+" /* 16 17 %iused */
+                          "(.*)$"       /* 18 19 Mounted on */,
+                          PCRE_MULTILINE, &error, &erroffset, NULL);
   if (re == NULL) { x_printf ("ERROR: update_volumes failed to compile regex"); free (data); return; }
 
   ovector[0] = 0;
@@ -271,9 +283,7 @@ void update_volumes()
     /* Other matching errors are not recoverable. */
     if (rc > 0)
     {
-      /* Matched a volume 
-       * 0=FullString 1(2)=Disk 2(4)=Size(blocks) 3(6)=Used 4(8)=Avail 5(10)=Percent 6(12)=Volume
-       */
+      /* Matched a volume */
       char *volname_str;
       asprintf (&volname_str, "%.*s", ovector[13] - ovector[12], data + ovector[12]);
       trim_end(volname_str);
@@ -302,6 +312,9 @@ void update_volumes()
       entry->fsUsed = extract_uint_in_range(data + ovector[6], ovector[7] - ovector[6]);
       entry->fsAvail = extract_uint_in_range(data + ovector[8], ovector[9] - ovector[8]);
       entry->fsUtilization = extract_uint_in_range(data + ovector[10], ovector[11] - ovector[10]);
+      entry->fsInodesUsed = extract_uint_in_range(data + ovector[12], ovector[13] - ovector[12]);
+      entry->fsInodesFree = extract_uint_in_range(data + ovector[14], ovector[15] - ovector[14]);
+      entry->fsInodesUtilization = extract_uint_in_range(data + ovector[16], ovector[17] - ovector[16]);
 
       /* Update extra info on the disk from diskutil */
 #ifdef __APPLE__
