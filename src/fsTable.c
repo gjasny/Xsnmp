@@ -285,7 +285,7 @@ void update_volumes()
     {
       /* Matched a volume */
       char *volname_str;
-      asprintf (&volname_str, "%.*s", ovector[13] - ovector[12], data + ovector[12]);
+      asprintf (&volname_str, "%.*s", ovector[19] - ovector[18], data + ovector[18]);
       trim_end(volname_str);
       
       struct fsTable_entry *entry = fsTable_head;
