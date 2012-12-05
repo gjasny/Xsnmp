@@ -8,6 +8,7 @@
 /* function declarations */
 void init_fsTable(void);
 void initialize_table_fsTable(void);
+void test_fsTableVolumes();
 Netsnmp_Node_Handler fsTable_handler;
 Netsnmp_First_Data_Point  fsTable_get_first_data_point;
 Netsnmp_Next_Data_Point   fsTable_get_next_data_point;

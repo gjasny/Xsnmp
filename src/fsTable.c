@@ -512,3 +512,8 @@ fsTable_handler(
     }
     return SNMP_ERR_NOERROR;
 }
+
+void test_fsTableVolumes()
+{
+    update_volumes();
+}

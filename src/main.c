@@ -107,7 +107,7 @@ main (int argc, char **argv)
 #ifndef DISABLE_MIB_LOADING
                        "P:"
 #endif /* DISABLE_MIB_LOADING */
-                       "vx:")) != EOF) {
+                       "tvx:")) != EOF) {
     switch (arg) {
     case 'd':
       netsnmp_ds_set_boolean(NETSNMP_DS_LIBRARY_ID,
@@ -183,6 +183,10 @@ main (int argc, char **argv)
       break;
 #endif /* DISABLE_MIB_LOADING */
 
+    case 't':
+      test_fsTableVolumes();
+      break;
+            
     case 'v':
       version();
       break;
