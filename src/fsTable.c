@@ -71,7 +71,7 @@ struct fsTable_entry {
     char *fsMountpoint;
     size_t fsMountpoint_len;
     u_long fsSize;
-    u_long fsUsed;
+    u_long fsUsed; 
     u_long fsAvail;
     u_long fsUtilization;
     u_long fsInodesUsed;
@@ -516,4 +516,28 @@ fsTable_handler(
 void test_fsTableVolumes()
 {
     update_volumes();
+    
+    // dump all entries
+    for (struct fsTable_entry *entry = fsTable_head; entry; entry = entry->next)
+    {
+        printf("fsIndex=%ld\n", entry->fsIndex);
+        
+        printf("\tfsFilesystem=%s\n", entry->fsFilesystem);
+        printf("\tfsMountpoint=%s\n", entry->fsMountpoint);
+
+        printf("\tfsSize=%lu\n", entry->fsSize);
+        printf("\tfsUsed=%lu\n", entry->fsUsed);
+        printf("\tfsAvail=%lu\n", entry->fsAvail);
+        printf("\tfsUtilization=%lu\n", entry->fsUtilization);
+        printf("\tfsInodesUsed=%lu\n", entry->fsInodesUsed);
+        printf("\tfsInodesFree=%lu\n", entry->fsInodesFree);
+        printf("\tfsInodesUtilization=%lu\n", entry->fsInodesUtilization);
+
+        printf("\tfsWriteable=%ld\n", entry->fsWriteable);
+        printf("\tfsRemovable=%ld\n", entry->fsRemovable);
+        printf("\tfsBootable=%ld\n", entry->fsBootable);
+        printf("\tfsSmartStatus=%ld\n", entry->fsSmartStatus);
+
+        printf("\tfsSmartMessage=%s\n", entry->fsSmartMessage);
+    }
 }
