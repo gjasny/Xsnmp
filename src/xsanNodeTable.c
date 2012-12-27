@@ -103,7 +103,6 @@ struct xsanNodeTable_entry
   time_t last_seen_in_cvlabel;
 
   /* Illustrate using a simple linked list */
-  int   valid;
   struct xsanNodeTable_entry *next;
 };
 

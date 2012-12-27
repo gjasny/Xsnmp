@@ -81,7 +81,6 @@ struct xsanVolumeTable_entry {
   struct timeval volume_cache_timestamp;
 
   /* Illustrate using a simple linked list */
-  int   valid;
   struct xsanVolumeTable_entry *next;
 };
 

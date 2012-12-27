@@ -78,7 +78,6 @@ struct xsanAffinityTable_entry {
     u_long xsanAffinityUsedMBytes;
 
     /* Illustrate using a simple linked list */
-    int   valid;
     struct xsanAffinityTable_entry *next;
 };
 

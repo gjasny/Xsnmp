@@ -45,7 +45,6 @@ struct xsanStripeGroupTable_entry
     long xsanAffinityIndex;
     
     /* Illustrate using a simple linked list */
-    int   valid;
     struct xsanStripeGroupTable_entry *next;
 };
 

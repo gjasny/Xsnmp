@@ -88,7 +88,6 @@ struct raidVolumeTable_entry {
     time_t last_seen;
 
     /* Illustrate using a simple linked list */
-    int   valid;
     struct raidVolumeTable_entry *next;
 };
 
