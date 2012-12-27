@@ -10,6 +10,7 @@
 #include <pcre.h>
 #include "log.h"
 #include "ram.h"
+#include "util.h"
 #include "command.h"
 #include "main.h"
 
@@ -28,25 +29,6 @@ struct ram_cache_s
 static struct ram_cache_s ram_cache;
 static struct timeval ram_cache_timestamp;
 
-void scale_value(char unit_char, uint32_t *val)
-{
-  switch(unit_char)
-  {
-    case 'K':
-      *val /= 1024;
-      break;
-    case 'M':
-      break;
-    case 'G':
-      *val *= 1024;
-      break;
-    case 'T':
-      *val *= 1024 * 1024;
-      break;      
-    default:
-      x_printf ("ERROR: scale_value unknown unit '%c'", unit_char); 
-  }
-}
 
 void match_and_scale (char *data, size_t data_len, char *type_str, uint32_t *val)
 {
@@ -66,7 +48,7 @@ void match_and_scale (char *data, size_t data_len, char *type_str, uint32_t *val
     char *value_str;
     asprintf (&value_str, "%.*s", ovector[3] - ovector[2], data + ovector[2]);
     *val = strtoul(value_str, NULL, 10);
-    scale_value (*(data + ovector[4]), val);
+    scale_value_to_m(*(data + ovector[4]), val);
     free (value_str);
   }
   else x_printf ("ERROR: match_and_scale got no match for %s", type_str);
