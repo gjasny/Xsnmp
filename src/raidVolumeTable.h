@@ -8,6 +8,8 @@
 /* function declarations */
 void init_raidVolumeTable(void);
 void initialize_table_raidVolumeTable(void);
+void test_raidVolumeTable(void);
+
 Netsnmp_Node_Handler raidVolumeTable_handler;
 Netsnmp_First_Data_Point  raidVolumeTable_get_first_data_point;
 Netsnmp_Next_Data_Point   raidVolumeTable_get_next_data_point;

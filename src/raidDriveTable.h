@@ -8,6 +8,8 @@
 /* function declarations */
 void init_raidDriveTable(void);
 void initialize_table_raidDriveTable(void);
+void test_raidDriveTable(void);
+
 Netsnmp_Node_Handler raidDriveTable_handler;
 Netsnmp_First_Data_Point  raidDriveTable_get_first_data_point;
 Netsnmp_Next_Data_Point   raidDriveTable_get_next_data_point;

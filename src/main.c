@@ -76,6 +76,10 @@ usage(const char *prog)
     fprintf(stderr,
             "  -t fs\t\t\ttest data aquisition and print result\n"
             "\t\t\t\tfs:\tfile system test\n"
+            "\t\t\t\traidInfo:\tRAID Info test\n"
+            "\t\t\t\traidDrives:\tRAID Drives test\n"
+            "\t\t\t\traidSets:\tRAID Sets test\n"
+            "\t\t\t\traidVolumes:\tRAID Volumes test\n"
             "\t\t\t\tram:\tRAM test\n");
     fprintf(stderr,
             "  -v\t\t\tdisplay package version number\n"
@@ -191,6 +195,18 @@ main (int argc, char **argv)
       if (optarg) {
         if (strcmp(optarg, "fs") == 0) {
           test_fsTableVolumes();
+          exit(EXIT_SUCCESS);
+        } else if (strcmp(optarg, "raidInfo") == 0) {
+          test_raidInfo();
+          exit(EXIT_SUCCESS);
+        } else if (strcmp(optarg, "raidDrives") == 0) {
+          test_raidDriveTable();
+          exit(EXIT_SUCCESS);
+        } else if (strcmp(optarg, "raidSets") == 0) {
+          test_raidSetTable();
+          exit(EXIT_SUCCESS);
+        } else if (strcmp(optarg, "raidVolumes") == 0) {
+          test_raidVolumeTable();
           exit(EXIT_SUCCESS);
         } else if (strcmp(optarg, "ram") == 0) {
           test_ram();

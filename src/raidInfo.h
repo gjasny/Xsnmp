@@ -7,6 +7,8 @@
 
 /* function declarations */
 void init_raidInfo(void);
+void test_raidInfo(void);
+
 Netsnmp_Node_Handler handle_raidGeneralStatus;
 Netsnmp_Node_Handler handle_raidGeneralStatusMessage;
 Netsnmp_Node_Handler handle_raidBatteryStatus;

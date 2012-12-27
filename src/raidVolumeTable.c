@@ -91,7 +91,7 @@ struct raidVolumeTable_entry {
     struct raidVolumeTable_entry *next;
 };
 
-struct raidVolumeTable_entry  *raidVolumeTable_head;
+static struct raidVolumeTable_entry  *raidVolumeTable_head;
 
 /* create a new row in the (unsorted) table */
 struct raidVolumeTable_entry *
@@ -448,4 +448,24 @@ raidVolumeTable_handler(
 
     }
     return SNMP_ERR_NOERROR;
+}
+
+void test_raidVolumeTable(void)
+{
+  update_volumelist();
+
+  // dump all sets
+  for (struct raidVolumeTable_entry *entry = raidVolumeTable_head; entry; entry = entry->next)
+  {
+    printf("raidVolumeIndex=%ld\n", entry->raidVolumeIndex);
+    
+    printf("\traidVolumeName=%s\n", entry->raidVolumeName);
+    printf("\traidVolumeSetName=%s\n", entry->raidVolumeSetName);
+    printf("\traidVolumeType=%s\n", entry->raidVolumeType);
+    printf("\traidVolumeSize=%d\n", entry->raidVolumeSize);
+    printf("\traidVolumeStatus=%ld\n", entry->raidVolumeStatus);
+    printf("\traidVolumeStatusMessage=%s\n", entry->raidVolumeStatusMessage);
+    printf("\traidVolumeComments=%s\n", entry->raidVolumeComments);
+    printf("\traidVolumeSetIndex=%ld\n", entry->raidVolumeSetIndex);
+  }
 }

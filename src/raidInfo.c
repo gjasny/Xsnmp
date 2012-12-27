@@ -373,3 +373,17 @@ handle_raidWriteCache(netsnmp_mib_handler *handler,
 
     return SNMP_ERR_NOERROR;
 }
+
+void test_raidInfo(void)
+{
+  update_raid();
+  
+  // dump all values
+  printf("generalStatus=%i\n", raid_cache.generalStatus);
+  printf("generalStatusMessage=%s\n", raid_cache.generalStatusMessage);
+  printf("batteryStatus=%i\n", raid_cache.batteryStatus);
+  printf("batteryStatusMessage=%s\n", raid_cache.batteryStatusMessage);
+  printf("hardwareVersion=%s\n", raid_cache.hardwareVersion);
+  printf("firmwareVersion=%s\n", raid_cache.firmwareVersion);
+  printf("writeCache=%i\n", raid_cache.writeCache);
+}

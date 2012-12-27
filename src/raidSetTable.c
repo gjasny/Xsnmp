@@ -63,7 +63,7 @@ initialize_table_raidSetTable(void)
     update_setlist();
 }
 
-struct raidSetTable_entry  *raidSetTable_head;
+static struct raidSetTable_entry  *raidSetTable_head;
 
 struct raidSetTable_entry* raidSetTable_get_head()
 { return raidSetTable_head; }
@@ -369,4 +369,21 @@ raidSetTable_handler(
 
     }
     return SNMP_ERR_NOERROR;
+}
+
+void test_raidSetTable(void)
+{
+  update_setlist();
+  
+  // dump all sets
+  for (struct raidSetTable_entry *entry = raidSetTable_head; entry; entry = entry->next)
+  {
+    printf("raidSetIndex=%ld\n", entry->raidSetIndex);
+    
+    printf("\traidSetName=%s\n", entry->raidSetName);
+    printf("\traidSetType=%s\n", entry->raidSetType);
+    printf("\traidSetSize=%i\n", entry->raidSetSize);
+    printf("\traidSetUnused=%i\n", entry->raidSetUnused);
+    printf("\traidSetComments=%s\n", entry->raidSetComments);
+  }
 }

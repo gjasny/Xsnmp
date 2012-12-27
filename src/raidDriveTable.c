@@ -87,7 +87,7 @@ struct raidDriveTable_entry {
     struct raidDriveTable_entry *next;
 };
 
-struct raidDriveTable_entry  *raidDriveTable_head;
+static struct raidDriveTable_entry  *raidDriveTable_head;
 
 /* create a new row in the (unsorted) table */
 struct raidDriveTable_entry *
@@ -425,4 +425,22 @@ raidDriveTable_handler(
 
     }
     return SNMP_ERR_NOERROR;
+}
+
+void test_raidDriveTable(void)
+{
+  update_drivelist();
+  
+  // dump all drives
+  for (struct raidDriveTable_entry *entry = raidDriveTable_head; entry; entry = entry->next)
+  {
+    printf("raidDriveIndex=%ld\n", entry->raidDriveIndex);
+    
+    printf("\traidDriveLocation=%s\n", entry->raidDriveLocation);
+    printf("\traidDriveSetName=%s\n", entry->raidDriveSetName);
+    printf("\traidDriveSize=%u\n", entry->raidDriveSize);
+    printf("\traidDriveStatus=%ld\n", entry->raidDriveStatus);
+    printf("\traidDriveStatusMessage=%s\n", entry->raidDriveStatusMessage);
+    printf("\traidDriveSetIndex=%ld\n", entry->raidDriveSetIndex);
+  }
 }
