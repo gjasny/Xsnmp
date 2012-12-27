@@ -7,7 +7,7 @@
 #include <net-snmp/net-snmp-includes.h>
 #include <net-snmp/agent/net-snmp-agent-includes.h>
 #include <fcntl.h>
-#include <pcre.h>
+#include <regex.h>
 #include "log.h"
 #include "ram.h"
 #include "util.h"
@@ -24,36 +24,18 @@ struct ram_cache_s
 };
 
 #define MAX_CACHE_AGE 10
-#define OVECCOUNT 30
 
 static struct ram_cache_s ram_cache;
 static struct timeval ram_cache_timestamp;
 
-
-void match_and_scale (char *data, size_t data_len, char *type_str, uint32_t *val)
+static uint32_t match_and_scale(const char *start, regmatch_t group)
 {
-  const char *error;
-  int erroffset;
-  int ovector[OVECCOUNT];
-  char *match_str;
-  
-  asprintf(&match_str, "\\b(\\d+)([KMGT]) %s[,\\.]", type_str);
-  pcre *re = pcre_compile(match_str, 0, &error, &erroffset, NULL);
-  free (match_str);
-  if (re == NULL) { x_printf ("ERROR: match_and_scale failed to compile regex"); return; }
-  
-  int rc = pcre_exec(re, NULL, data, data_len, 0, 0, ovector, OVECCOUNT);
-  if (rc > 2)  
-  {
-    char *value_str;
-    asprintf (&value_str, "%.*s", ovector[3] - ovector[2], data + ovector[2]);
-    *val = strtoul(value_str, NULL, 10);
-    scale_value_to_m(*(data + ovector[4]), val);
-    free (value_str);
-  }
-  else x_printf ("ERROR: match_and_scale got no match for %s", type_str);
-  
-  pcre_free(re);    /* Release memory used for the compiled pattern */
+  char *val_str, *end = NULL;
+  asprintf(&val_str, "%.*s", (int)(group.rm_eo -  group.rm_so), start + group.rm_so);
+  uint32_t val = strtoul(val_str, &end, 10);
+  scale_value_to_m(end[0], &val);
+  free(val_str);
+  return val;
 }
 
 void update_ram()
@@ -79,12 +61,38 @@ void update_ram()
 
   /* Match and scale data */
   if (!data) return;
-  match_and_scale (data, data_len, "wired", &ram_cache.wired);
-  match_and_scale (data, data_len, "active", &ram_cache.active);
-  match_and_scale (data, data_len, "inactive", &ram_cache.inactive);
-  match_and_scale (data, data_len, "used", &ram_cache.used);
-  match_and_scale (data, data_len, "free", &ram_cache.free);
-
+  
+  regex_t re;
+  int rc = regcomp(&re, "^PhysMem: ([0-9]+[KMGT]) wired" /*  1 wired */
+                   ", ([0-9]+[KMGT]) active" /*  2 active */
+                   ", ([0-9]+[KMGT]) inactive" /*  3 inactive */
+                   ", ([0-9]+[KMGT]) used" /*  4 used */
+                   ", ([0-9]+[KMGT]) free\\.$" /*  5 free */
+                   , REG_EXTENDED | REG_NEWLINE);
+  
+  if (rc) {
+    x_printf("ERROR: update_ram failed to compile regex");
+    free(data);
+    return;
+  }
+  
+  const size_t ocount = 30;
+  regmatch_t ovector[ocount];
+  
+  memset(ovector, 0, sizeof(ovector));
+  rc = regexec(&re, data, ocount, ovector, 0);
+  regfree(&re);
+  
+  if (rc == 0) {
+    ram_cache.wired = match_and_scale(data, ovector[1]);
+    ram_cache.active = match_and_scale(data, ovector[2]);
+    ram_cache.inactive = match_and_scale(data, ovector[3]);
+    ram_cache.used = match_and_scale(data, ovector[4]);
+    ram_cache.free = match_and_scale(data, ovector[5]);
+  } else {
+    x_printf("ERROR: update_ram got no match");
+  }
+  
   /* Set cache timestamp */
   gettimeofday(&ram_cache_timestamp, NULL);  
 
