@@ -313,7 +313,7 @@ void update_node_list ()
    else
    {
      /* Use live Xsan data */
-     data = x_command_run("cvlabel -a -g -l -v", 0);
+     data = x_command_run("cvlabel -a -g -l -v");
      if (!data) return;
      data_len = strlen(data);     
    }
@@ -463,7 +463,7 @@ void update_node_list_detail()
    else
    {
      /* Use live Xsan data */
-     data = x_command_run("cvlabel -a -g -L -v", 0);
+     data = x_command_run("cvlabel -a -g -L -v");
      if (!data) return;
      data_len = strlen(data);
    }

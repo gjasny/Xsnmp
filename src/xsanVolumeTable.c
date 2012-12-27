@@ -224,7 +224,7 @@ void update_vollist_fsmlist ()
   }
   else
   {
-    data = x_command_run("cvadmin -e 'fsmlist'", 0);
+    data = x_command_run("cvadmin -e 'fsmlist'");
     if (!data) return;
     data_len = strlen(data);    
   }
@@ -379,7 +379,7 @@ void update_vollist_cvadmin ()
   }
   else
   {
-    data = x_command_run("echo q | cvadmin", 0);
+    data = x_command_run("echo q | cvadmin");
     if (!data) return;
     data_len = strlen(data);    
   }
@@ -532,10 +532,7 @@ void update_volume(struct xsanVolumeTable_entry *entry)
   else
   {
     /* Use live Xsan data */
-    char *command_str;
-    asprintf (&command_str, "echo 'select %s; show long' | cvadmin", entry->xsanVolumeName);
-    data = x_command_run(command_str, 0);
-    free (command_str);
+    data = x_command_run_va("echo 'select %s; show long' | cvadmin", entry->xsanVolumeName);
     if (!data) return;
     data_len = strlen(data);    
   }

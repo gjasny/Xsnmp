@@ -195,7 +195,7 @@ void update_volumelist()
   else
   {
     /* Use live data */
-    data = x_command_run("raidutil list volumeinfo", 0);
+    data = x_command_run("raidutil list volumeinfo");
     if (!data) return;
     data_len = strlen(data);
   }

@@ -1,3 +1,4 @@
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -13,7 +14,22 @@
 #include "log.h"
 #include "command.h"
 
-char* x_command_run (char *command_str, int flags)
+char* x_command_run_va(const char *format, ...)
+{
+    va_list ap;
+    va_start(ap, format);
+    
+    char *ap_str;
+    vasprintf(&ap_str, format, ap);
+
+    char* ret = x_command_run(ap_str);
+    
+    va_end (ap);
+    
+    return ret;
+}
+
+char* x_command_run(const char *command_str)
 {
   int num;
   int fd1[2], fd2[2];

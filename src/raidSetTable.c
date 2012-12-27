@@ -167,7 +167,7 @@ void update_setlist()
   else
   {
     /* Use live data */
-    data = x_command_run("raidutil list raidsetinfo", 0);
+    data = x_command_run("raidutil list raidsetinfo");
     if (!data) return;
     data_len = strlen(data);
   }

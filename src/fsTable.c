@@ -178,11 +178,8 @@ fsTable_get_next_data_point(void **my_loop_context,
 void update_volume_disk (struct fsTable_entry *entry)
 {
   /* Uses 'diskutil' to update the disk referenced in disk_name */
-  char *command_str;
-  asprintf (&command_str, "diskutil info %s", entry->fsFilesystem);
-  char *data = x_command_run (command_str, 0);
-  free(command_str);
-  if (!data) 
+  char *data = x_command_run_va("diskutil info %s", entry->fsFilesystem);
+  if (!data)
   {
     x_printf ("ERROR: Failed to get data from 'diskutil info %s'\n", entry->fsFilesystem);
     return; 
@@ -232,7 +229,7 @@ void update_volumes()
   struct timeval now;
   gettimeofday(&now, NULL);
   
-  char *data = x_command_run("df -mi", 0);
+  char *data = x_command_run("df -mi");
   if (!data) return;
   size_t data_len = strlen(data);
 

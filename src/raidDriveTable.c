@@ -188,7 +188,7 @@ void update_drivelist()
   else
   {
     /* Use live data */
-    data = x_command_run("raidutil list driveinfo", 0);
+    data = x_command_run("raidutil list driveinfo");
     if (!data) return;
     data_len = strlen(data);
   }
