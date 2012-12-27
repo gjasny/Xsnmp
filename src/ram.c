@@ -173,3 +173,15 @@ handle_ram (netsnmp_mib_handler *handler,
 
   return SNMP_ERR_NOERROR;
 }
+
+void test_ram()
+{
+  update_ram();
+  
+  // dump result
+  printf("wired=%u\n", ram_cache.wired);
+  printf("active=%u\n", ram_cache.active);
+  printf("inactive=%u\n", ram_cache.inactive);
+  printf("used=%u\n", ram_cache.used);
+  printf("free=%u\n", ram_cache.free);
+}

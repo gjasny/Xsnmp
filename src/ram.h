@@ -7,6 +7,8 @@
 
 /* function declarations */
 void init_ram(void);
+void test_ram();
+
 Netsnmp_Node_Handler handle_ram;
 
 #endif /* RAM_H */

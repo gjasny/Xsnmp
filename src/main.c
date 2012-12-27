@@ -74,10 +74,14 @@ usage(const char *prog)
     snmp_mib_toggle_options_usage("\t\t\t  ", stderr);
 #endif /* DISABLE_MIB_LOADING */
     fprintf(stderr,
+            "  -t fs\t\t\ttest data aquisition and print result\n"
+            "\t\t\t\tfs:\tfile system test\n"
+            "\t\t\t\tram:\tRAM test\n");
+    fprintf(stderr,
             "  -v\t\t\tdisplay package version number\n"
             "  -x TRANSPORT\tconnect to master agent using TRANSPORT\n"
             "  -p\t\t\tenable Xsnmp performance logging\n");
-    exit(1);
+    exit(EXIT_FAILURE);
 }
 
 static void
@@ -107,7 +111,7 @@ main (int argc, char **argv)
 #ifndef DISABLE_MIB_LOADING
                        "P:"
 #endif /* DISABLE_MIB_LOADING */
-                       "tvx:")) != EOF) {
+                       "t:vx:")) != EOF) {
     switch (arg) {
     case 'd':
       netsnmp_ds_set_boolean(NETSNMP_DS_LIBRARY_ID,
@@ -184,7 +188,16 @@ main (int argc, char **argv)
 #endif /* DISABLE_MIB_LOADING */
 
     case 't':
-      test_fsTableVolumes();
+      if (optarg) {
+        if (strcmp(optarg, "fs") == 0) {
+          test_fsTableVolumes();
+          exit(EXIT_SUCCESS);
+        } else if (strcmp(optarg, "ram") == 0) {
+          test_ram();
+          exit(EXIT_SUCCESS);
+        }
+      }
+      usage(argv[0]);
       break;
             
     case 'v':
