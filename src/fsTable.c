@@ -6,13 +6,13 @@
 #include <net-snmp/net-snmp-config.h>
 #include <net-snmp/net-snmp-includes.h>
 #include <net-snmp/agent/net-snmp-agent-includes.h>
-#include <pcre.h>
+
+#include <regex.h>
+
 #include "fsTable.h"
 #include "log.h"
 #include "command.h"
 #include "util.h"
-
-#define OVECCOUNT 30
 
 /** Initializes the fsTable module */
 void
@@ -232,57 +232,45 @@ void update_volumes()
   if (!data) return;
   size_t data_len = strlen(data);
 
-  const char *error;
-  int erroffset;
-  int ovector[OVECCOUNT];
-  pcre *re = pcre_compile("^(.*)[ ]+"   /*  2  3 Filesystem */
-                          "(\\d+)[ ]+"  /*  4  5 1M-blocks */
-                          "(\\d+)[ ]+"  /*  6  7 Used */
-                          "(\\d+)[ ]+"  /*  8  9 Available */
-                          "(\\d+)%[ ]+" /* 10 11 Capacity */
-                          "(\\d+)[ ]+"  /* 12 13 iused */
-                          "(\\d+)[ ]+"  /* 14 15 ifree */
-                          "(\\d+)%[ ]+" /* 16 17 %iused */
-                          "(.*)$"       /* 18 19 Mounted on */,
-                          PCRE_MULTILINE, &error, &erroffset, NULL);
-  if (re == NULL) { x_printf ("ERROR: update_volumes failed to compile regex"); free (data); return; }
+  regex_t re;
+    
+  int rc = regcomp(&re,
+                   "^(.*)[ ]+"     /*  1 Filesystem */
+                   "([0-9]+)[ ]+"  /*  2 1M-blocks */
+                   "([0-9]+)[ ]+"  /*  3 Used */
+                   "([0-9]+)[ ]+"  /*  4 Available */
+                   "([0-9]+)%[ ]+" /*  5 Capacity */
+                   "([0-9]+)[ ]+"  /*  6 iused */
+                   "([0-9]+)[ ]+"  /*  7 ifree */
+                   "([0-9]+)%[ ]+" /*  8 %iused */
+                   "(.*)$"         /*  9 Mounted on */,
+                   REG_EXTENDED | REG_NEWLINE);
+  if (rc) {
+    x_printf("ERROR: update_volumes failed to compile regex");
+    free(data);
+    return;
+  }
 
-  ovector[0] = 0;
-  ovector[1] = 0;
+  const char *start = data;
+  const size_t ocount = 30;
+  regmatch_t ovector[ocount];
+
   while(1)
   {
-    int options = 0;                 /* Normally no options */
-    int start_offset = ovector[1];   /* Start at end of previous match */
-    
-    if (ovector[0] == ovector[1])
-    {
-      if (ovector[0] == (int) data_len) break;
-    }
+    memset(ovector, 0, sizeof(ovector));
+    rc = regexec(&re, start, ocount, ovector, 0);
 
-    int rc = pcre_exec(
-      re,                   /* the compiled pattern */
-      NULL,                 /* no extra data - we didn't study the pattern */
-      data,              /* the subject string */
-      data_len,       /* the length of the subject */
-      start_offset,         /* starting offset in the subject */
-      options,              /* options */
-      ovector,              /* output vector for substring information */
-      OVECCOUNT);           /* number of elements in the output vector */
-
-    if (rc == PCRE_ERROR_NOMATCH)
+    if (rc == REG_NOMATCH)
     {
-      if (options == 0) break;
-      ovector[1] = start_offset + 1;
-      continue;    /* Go round the loop again */
+      break;
     }
 
     /* Other matching errors are not recoverable. */
-    if (rc > 0)
+    if (rc == 0)
     {
       /* Matched a volume */
-      char *volname_str;
-      asprintf (&volname_str, "%.*s", ovector[19] - ovector[18], data + ovector[18]);
-      trim_end(volname_str);
+      char *volname_str = NULL;
+      extract_string_in_group(start, ovector[9], &volname_str, NULL);
       
       struct fsTable_entry *entry = fsTable_head;
       while (entry)
@@ -300,32 +288,33 @@ void update_volumes()
       entry->last_seen = now.tv_sec;
       free (volname_str);
       volname_str = NULL;
-      if (entry->fsFilesystem) free (entry->fsFilesystem);
-      asprintf (&entry->fsFilesystem, "%.*s", ovector[3] - ovector[2], data + ovector[2]);
-      trim_end(entry->fsFilesystem);
-      entry->fsFilesystem_len = strlen (entry->fsFilesystem);
-      entry->fsSize = extract_uint_in_range(data + ovector[4], ovector[5] - ovector[4]);
-      entry->fsUsed = extract_uint_in_range(data + ovector[6], ovector[7] - ovector[6]);
-      entry->fsAvail = extract_uint_in_range(data + ovector[8], ovector[9] - ovector[8]);
-      entry->fsUtilization = extract_uint_in_range(data + ovector[10], ovector[11] - ovector[10]);
-      entry->fsInodesUsed = extract_uint_in_range(data + ovector[12], ovector[13] - ovector[12]);
-      entry->fsInodesFree = extract_uint_in_range(data + ovector[14], ovector[15] - ovector[14]);
-      entry->fsInodesUtilization = extract_uint_in_range(data + ovector[16], ovector[17] - ovector[16]);
+      
+      extract_string_in_group(start, ovector[1], &entry->fsFilesystem, &entry->fsFilesystem_len);
+
+      entry->fsSize = extract_uint_in_group(start, ovector[2]);
+      entry->fsUsed = extract_uint_in_group(start, ovector[3]);
+      entry->fsAvail = extract_uint_in_group(start, ovector[4]);
+      entry->fsUtilization = extract_uint_in_group(start, ovector[5]);
+      entry->fsInodesUsed = extract_uint_in_group(start, ovector[6]);
+      entry->fsInodesFree = extract_uint_in_group(start, ovector[7]);
+      entry->fsInodesUtilization = extract_uint_in_group(start, ovector[8]);
 
       /* Update extra info on the disk from diskutil */
 #ifdef __APPLE__
       if (entry->fsFilesystem && strstr(entry->fsFilesystem, "/dev/")) update_volume_disk(entry);
 #endif
+      
+      start += ovector[0].rm_eo;
     }
     else
     {
-      pcre_free(re);    /* Release memory used for the compiled pattern */
+      regfree(&re);    /* Release memory used for the compiled pattern */
       return;
     }  
   }
   
   /* Clean up */
-  pcre_free(re);
+  regfree(&re);
   
   /* Check for obsolete entries */
   struct fsTable_entry *entry = fsTable_head;

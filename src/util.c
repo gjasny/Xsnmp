@@ -40,6 +40,15 @@ uint32_t extract_uint_in_range (char *start, size_t len)
   return val;
 }
 
+uint32_t extract_uint_in_group(const char *start, regmatch_t group)
+{
+  char *val_str;
+  asprintf(&val_str, "%.*s", (int)(group.rm_eo -  group.rm_so), start + group.rm_so);
+  uint32_t val = strtoul(val_str, NULL, 10);
+  free(val_str);
+  return val;
+}
+
 uint32_t extract_uint_from_regex (char *data, size_t data_len, char *expression)
 {
   char *val_str = NULL;
@@ -95,6 +104,17 @@ char* extract_string_in_range (char *start, size_t len, char **dest, size_t *des
   asprintf (&*dest, "%.*s", (int) len, start);
   trim_end(*dest);
   *dest_len = strlen (*dest);
+  return *dest;
+}
+
+char* extract_string_in_group(const char *start, regmatch_t group, char **dest, size_t *dest_len)
+{
+  if (*dest) free (*dest);
+  *dest = NULL;
+  if (dest_len) *dest_len = 0;
+  asprintf(&*dest, "%.*s", (int)(group.rm_eo -  group.rm_so), start + group.rm_so);
+  trim_end(*dest);
+  if (dest_len) *dest_len = strlen(*dest);
   return *dest;
 }
 
