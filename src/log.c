@@ -42,14 +42,11 @@ void x_perflog (char *format, ...)
 
 void x_vaprintf (char *format, va_list ap)
 {
-  int pid;
   time_t timet;
   struct tm *tms;
   char *time_str;
   char *ap_str;
   char *print_str;
-
-  pid = getpid ();
 
   /* Prepare time string */
   timet = time (NULL);

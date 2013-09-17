@@ -92,7 +92,7 @@ char* x_command_run(const char *command_str)
           }
           else
           {
-            recvdata = (char *) calloc(nbytes, sizeof(u_char));
+            recvdata = (char *) calloc(nbytes, sizeof(char));
             memcpy(recvdata, buf, nbytes);
             recvdata_len = nbytes;
           }
