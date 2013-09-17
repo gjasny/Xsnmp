@@ -45,13 +45,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4637DF42165959E900129A82 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4650298D15E560EA00B82F7C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 46502A2C15E56BDD00B82F7C;
-			remoteInfo = XsnmpPreferences;
-		};
 		46502A6415E56F0600B82F7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4650298D15E560EA00B82F7C /* Project object */;
@@ -410,7 +403,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4637DF43165959E900129A82 /* PBXTargetDependency */,
 			);
 			name = xsnmpd;
 			productName = xsnmpd;
@@ -538,11 +530,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4637DF43165959E900129A82 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 46502A2C15E56BDD00B82F7C /* XsnmpPreferences */;
-			targetProxy = 4637DF42165959E900129A82 /* PBXContainerItemProxy */;
-		};
 		46502A6515E56F0600B82F7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 46502A5715E56E5A00B82F7C /* XsnmpHelperTool */;

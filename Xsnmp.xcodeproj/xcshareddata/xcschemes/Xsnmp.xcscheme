@@ -14,20 +14,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "46502A2C15E56BDD00B82F7C"
-               BuildableName = "XsnmpPreferences.prefPane"
-               BlueprintName = "XsnmpPreferences"
-               ReferencedContainer = "container:Xsnmp.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "46726032164E88D000472104"
                BuildableName = "xsnmpd"
                BlueprintName = "xsnmpd"

@@ -1,21 +1,5 @@
 #!/bin/sh
 
-# Check to see if there's a default set for Xsnmp Agent Enabled 
-defaults read /Library/Preferences/com.xsnmp.xsnmp agentExtensionEnabled
-if test $? -eq "1"; then 
-  # No default is set, enable Xsnmp Agent Extension
-  echo "Enabling Xsnmp Agent Extension"
-  ruby /Library/PreferencePanes/XsnmpPreferences.prefPane/Contents/Resources/enable_xsnmp_agentx.rb
-fi
-
-# Check for default SNMP community
-defaults read /Library/Preferences/com.xsnmp.xsnmp snmpCommunity
-if test $? -eq "1"; then 
-  # No default is set, use 'public' (this wont be active unless xsnmp is
-  # managing the SNMP agent config
-  defaults write /Library/Preferences/com.xsnmp.xsnmp snmpCommunity public
-fi
-
 # Restart Xsnmp Agent Extension
 killall xsnmpd
 
