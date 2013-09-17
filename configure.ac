@@ -1,7 +1,7 @@
 # -*- Autoconf -*-
 
 AC_PREREQ(2.59)
-AC_INIT([xsnmp], [1.2.0-beta1])
+AC_INIT([xsnmp], [1.2.1])
 
 AC_CONFIG_AUX_DIR([build-aux])
 
