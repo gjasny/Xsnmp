@@ -84,7 +84,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "PACKAGES=&quot;${ARCHIVE_PATH}/Packages/&quot;&#10;MVERS=&quot;$(cd &quot;${PROJECT_DIR}&quot; &amp;&amp; agvtool mvers -terse1)&quot; || MVERS=&quot;unknown&quot;&#10;OSVER=&quot;$(sw_vers -productVersion | sed -E &apos;s|([[:digit:]]+.[[:digit:]]+).*|\1|g&apos;)&quot;&#10;&#10;PKG=&quot;${OBJROOT}/ArchiveIntermediates/Xsnmp/BuildProductsPath/${CONFIGURATION}/Xsnmp.pkg&quot;&#10;ARCHIVE_FILENAME=&quot;Xsnmp-${MVERS}-${CURRENT_PROJECT_VERSION}-${OSVER}.pkg&quot;&#10;&#10;if [ -f &quot;${PKG}&quot; ]; then&#10;    mkdir -p &quot;${PACKAGES}&quot;&#10;    cp -r &quot;${PKG}&quot; &quot;${PACKAGES}/${ARCHIVE_FILENAME}&quot;&#10;    cp -r &quot;${PKG}&quot; &quot;${PROJECT_DIR}/${ARCHIVE_FILENAME}&quot;&#10;fi"
+               scriptText = "PACKAGES=&quot;${ARCHIVE_PATH}/Packages/&quot;&#10;MVERS=&quot;$(cd &quot;${PROJECT_DIR}&quot; &amp;&amp; agvtool mvers -terse1)&quot; || MVERS=&quot;unknown&quot;&#10;OSVER=&quot;$(sw_vers -productVersion | sed -E &apos;s|([[:digit:]]+.[[:digit:]]+).*|\1|g&apos;)&quot;&#10;&#10;PKG=&quot;${BUILT_PRODUCTS_DIR}/Xsnmp.pkg&quot;&#10;ARCHIVE_FILENAME=&quot;Xsnmp-${MVERS}-${CURRENT_PROJECT_VERSION}-${OSVER}.pkg&quot;&#10;&#10;if [ -f &quot;${PKG}&quot; ]; then&#10;    mkdir -p &quot;${PACKAGES}&quot;&#10;    cp -r &quot;${PKG}&quot; &quot;${PACKAGES}/${ARCHIVE_FILENAME}&quot;&#10;    cp -r &quot;${PKG}&quot; &quot;${PROJECT_DIR}/${ARCHIVE_FILENAME}&quot;&#10;fi&#10;"
                shellToInvoke = "/bin/bash">
                <EnvironmentBuildable>
                   <BuildableReference
